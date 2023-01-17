@@ -61,7 +61,7 @@ class RandomWalk {
 			ROS_INFO_STREAM("Range: " << closestRange);
 			
 			// TODO: if range is smaller than PROXIMITY_RANGE_M, update fsm and rotateStartTime,  
-      // and also choose a reasonable rotateDuration (keeping in mind of the value  // of ROTATE_SPEED_RADPS) 
+      			// and also choose a reasonable rotateDuration (keeping in mind of the value  // of ROTATE_SPEED_RADPS) 
 			// 
 			// HINT: you can obtain the current time by calling: 
 			// 
@@ -74,7 +74,7 @@ class RandomWalk {
 			// - rand() % 100 
 			// 
 			// see http://www.cplusplus.com/reference/clibrary/cstdlib/rand/ for more details  
-      /////////////////////// ANSWER CODE BEGIN /////////////////// 
+      			/////////////////////// ANSWER CODE BEGIN /////////////////// 
 			
 			/////////////////////// ANSWER CODE END /////////////////// 
 		}
@@ -95,7 +95,7 @@ class RandomWalk {
 			// - move(FORWARD_SPEED_MPS, 0); // Move foward 
 			// 
 			// depending on the FSM state; also change the FSM state when appropriate  
-      /////////////////////// ANSWER CODE BEGIN /////////////////// 
+      			/////////////////////// ANSWER CODE BEGIN /////////////////// 
       
 			/////////////////////// ANSWER CODE END /////////////////// 
 			ros::spinOnce(); // Need to call this function often to allow ROS to process incoming messages
@@ -113,12 +113,12 @@ class RandomWalk {
 	constexpr static double FORWARD_SPEED_MPS = 1.0;
 	constexpr static double ROTATE_SPEED_RADPS = M_PI/2;
 
-  protected:
-		ros::Publisher commandPub; // Publisher to the simulated robot's velocity command topic
-		ros::Subscriber laserSub; // Subscriber to the simulated robot's laser scan topic
-		enum FSM fsm; // Finite state machine for the random walk algorithm
-		ros::Time rotateStartTime; // Start time of the rotation
-		ros::Duration rotateDuration; // Duration of the rotation
+  	protected:
+	ros::Publisher commandPub; // Publisher to the simulated robot's velocity command topic
+	ros::Subscriber laserSub; // Subscriber to the simulated robot's laser scan topic
+	enum FSM fsm; // Finite state machine for the random walk algorithm
+	ros::Time rotateStartTime; // Start time of the rotation
+	ros::Duration rotateDuration; // Duration of the rotation
 };
 
 int main(int argc, char**argv) {
